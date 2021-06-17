@@ -1,0 +1,710 @@
+                                //https://mobirise.com/html-templates/simple-html5-template/
+                                @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+                                $primary: #313131;
+                                $secondary: #fde21c;
+                                $tertiary: #506df5;
+                                $darkblue: #012f5b;
+                                $lightgray: #d3d3d3;
+                                $text: #585858;
+                                $white: #fff;
+                                $black: #000000;
+                                $orange: #fd830f;
+                                $bg: #f7f7f7;
+                                $fontSize: 16px;
+                                $fontFamily: 'Montserrat',
+                                sans-serif;
+                                $transition: .4s ease;
+                                $padding: 4rem 0;
+                                /****************
+mixins
+****************/
+                                
+                                @mixin flex($justify,
+                                $align,
+                                $direction) {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    justify-content: $justify;
+                                    align-items: $align;
+                                    flex-direction: $direction;
+                                }
+                                /*****************
+basic styles
+*****************/
+                                
+                                * {
+                                    margin: 0;
+                                    padding: 0;
+                                    box-sizing: border-box;
+                                }
+                                
+                                body {
+                                    font-size: $fontSize;
+                                    font-family: $fontFamily;
+                                    color: $black;
+                                    background: $bg;
+                                }
+                                
+                                .container {
+                                    width: 65%;
+                                    margin: auto;
+                                    @media(max-width: 768px) {
+                                        width: 90%;
+                                    }
+                                }
+                                /*-----HEADING-----*/
+                                
+                                header {
+                                    background: radial-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(img/header.jpg);
+                                    background-size: cover;
+                                    background-position: center;
+                                    font-family: $fontFamily;
+                                    height: 80vh;
+                                    text-align: center;
+                                    @include flex(center,
+                                    center,
+                                    column);
+                                    div:first-child {
+                                        width: 100%;
+                                        h1 {
+                                            color: $white;
+                                            font-size: 2.8rem;
+                                        }
+                                        p {
+                                            color: $white;
+                                            padding: 20px 0;
+                                            font-size: 1rem;
+                                            line-height: 1.5rem;
+                                        }
+                                    }
+                                    div:last-child {
+                                        button:first-child {
+                                            padding: 15px 25px;
+                                            background: $tertiary;
+                                            color: $white;
+                                            border: 1px solid $tertiary;
+                                            margin-right: 10px;
+                                            cursor: pointer;
+                                            border-radius: 3px;
+                                            &:hover {
+                                                color: $tertiary;
+                                                background: none;
+                                                border: 1px solid $tertiary;
+                                                transition: $transition;
+                                            }
+                                        }
+                                        button:last-child {
+                                            padding: 15px 25px;
+                                            border: 1px solid $white;
+                                            color: $white;
+                                            background: none;
+                                            cursor: pointer;
+                                            border-radius: 3px;
+                                            &:hover {
+                                                background: $white;
+                                                color: $primary;
+                                                transition: $transition;
+                                            }
+                                        }
+                                    }
+                                }
+                                /*----CARDS----*/
+                                
+                                .cards {
+                                    @include flex(space-between,
+                                    center,
+                                    row);
+                                    article {
+                                        flex: 1;
+                                        @media(max-width: 768px) {
+                                            flex: 0 0 100%;
+                                        }
+                                        text-align: center;
+                                        border: 1px solid $lightgray;
+                                        margin: $padding;
+                                        &:hover {
+                                            transform: scale(110%);
+                                            background: $bg;
+                                            transition: $transition;
+                                        }
+                                        h4 {
+                                            font-size: 2rem;
+                                            color: $black;
+                                            font-size: 2.5rem;
+                                            font-weight: 300;
+                                            padding-top: 30px;
+                                        }
+                                        .price {
+                                            @include flex(center,
+                                            flex-end,
+                                            row);
+                                            padding: 40px 0;
+                                            h2 {
+                                                color: $primary;
+                                                font-size: 1rem;
+                                                font-weight: lighter;
+                                                align-self: flex-end;
+                                                padding-bottom: 15px;
+                                            }
+                                            h5 {
+                                                color: $darkblue;
+                                                font-size: 4rem;
+                                                font-weight: 300;
+                                            }
+                                            h6 {
+                                                color: $darkblue;
+                                                font-size: 2rem;
+                                                font-weight: lighter;
+                                                padding-bottom: 10px;
+                                            }
+                                        }
+                                        p {
+                                            font-size: 1rem;
+                                            line-height: 1.3rem;
+                                            color: $primary;
+                                            padding-bottom: 30px;
+                                        }
+                                        button {
+                                            padding: 13px 25px;
+                                            margin-bottom: 60px;
+                                            columns: $tertiary;
+                                            border: 1px solid $tertiary;
+                                            cursor: pointer;
+                                            transition: $transition;
+                                            border-radius: 3px;
+                                            background: none;
+                                            color: $tertiary;
+                                            &:hover {
+                                                color: $white;
+                                                background: $tertiary;
+                                            }
+                                        }
+                                        // &:nth-child(odd) {}
+                                    }
+                                }
+                                /*----ADVANTAGES----*/
+                                
+                                .advantages {
+                                    margin: auto;
+                                    background-image: radial-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(img/bg2.jpg);
+                                    background-position: center;
+                                    background-size: cover;
+                                    height: 100vh;
+                                    @media(max-width: 768px) {
+                                        height: 280vh;
+                                    }
+                                    padding: 50px 0;
+                                    @media(max-width: 768px) {
+                                        padding: 10px 0;
+                                    }
+                                    h1 {
+                                        color: $white;
+                                        font-size: 5rem;
+                                        font-weight: 400;
+                                        padding: 30px 0;
+                                        text-align: center;
+                                        @media(max-width: 767px) {
+                                            font-size: 2rem;
+                                        }
+                                        &::after {
+                                            display: block;
+                                            content: "";
+                                            height: 4px;
+                                            width: 100px;
+                                            background: $secondary;
+                                            margin: 10px auto;
+                                        }
+                                    }
+                                    div {
+                                        @include flex(center,
+                                        center,
+                                        row);
+                                        width: 90%;
+                                        @media(max-width: 768px) {
+                                            flex: 0 0 80%;
+                                            @include flex(space-between,
+                                            center,
+                                            column);
+                                        }
+                                        margin: auto;
+                                        border-radius: 0px 0px 10px 10px;
+                                        article {
+                                            flex: 0 0 25%;
+                                            @media(max-width: 768px) {
+                                                flex: 0 0 100%;
+                                                margin-bottom: 50px;
+                                            }
+                                            @include flex(space-between,
+                                            center,
+                                            column);
+                                            div {
+                                                height: 30vh;
+                                                img {
+                                                    border-radius: 10px 10px 0px 0px;
+                                                    border: 1px solid $white;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                                &:last-child {
+                                                    @include flex(flex-start,
+                                                    center,
+                                                    row);
+                                                    padding: 30px;
+                                                    background: $white;
+                                                    h4 {
+                                                        font-size: 2rem;
+                                                        font-weight: 300;
+                                                    }
+                                                    p {
+                                                        font-size: .9rem;
+                                                        color: $primary;
+                                                        line-height: 1.3rem;
+                                                        padding: 20px 0;
+                                                    }
+                                                    button {
+                                                        padding: 13px 25px;
+                                                        margin-bottom: 60px;
+                                                        columns: $tertiary;
+                                                        border: 1px solid $tertiary;
+                                                        cursor: pointer;
+                                                        transition: $transition;
+                                                        border-radius: 3px;
+                                                        background: none;
+                                                        color: $tertiary;
+                                                        @media(max-width: 767px) {
+                                                            margin: 0;
+                                                        }
+                                                        &:hover {
+                                                            color: $white;
+                                                            background: $tertiary;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                /*----TEAMS----*/
+                                
+                                .team {
+                                    h1 {
+                                        width: 100%;
+                                        margin: auto;
+                                        color: $black;
+                                        font-size: 5rem;
+                                        font-weight: 100;
+                                        padding: 30px 0;
+                                        text-align: center;
+                                        display: inline-block;
+                                    }
+                                }
+                                
+                                .cards1 {
+                                    // width: 65%;
+                                    padding-bottom: 30px;
+                                    @include flex(center,
+                                    center,
+                                    row);
+                                    @media(max-width: 768px) {
+                                        @include flex(center, center, column);
+                                    }
+                                    article {
+                                        flex: 0 0 48%;
+                                        @media(max-width: 767px) {
+                                            flex: 0 0 95%;
+                                        }
+                                        @include flex(center,
+                                        center,
+                                        row);
+                                        box-shadow: 0 0 5px $lightgray;
+                                        margin: 12px;
+                                        &:hover {
+                                            box-shadow: 0 0 20px $lightgray;
+                                            transition: $transition;
+                                        }
+                                        div {
+                                            flex: 0 0 50%;
+                                            @media(max-width: 767px) {
+                                                flex: 0 0 100%;
+                                            }
+                                        }
+                                         :first-child {
+                                            h2 {
+                                                color: $primary;
+                                                font-size: 2rem;
+                                                font-weight: 300;
+                                                padding: 0 20px 2px;
+                                            }
+                                            h3 {
+                                                color: $primary;
+                                                font-size: 1.5rem;
+                                                font-weight: 200;
+                                                padding: 0 20px 10px;
+                                            }
+                                            p {
+                                                font-size: 1rem;
+                                                line-height: 1.3rem;
+                                                color: $primary;
+                                                padding: 0 20px 5px;
+                                            }
+                                            div {
+                                                padding: 5px 20px 5px;
+                                                span {
+                                                    color: $orange;
+                                                }
+                                            }
+                                            span {
+                                                color: $orange;
+                                            }
+                                        }
+                                         :last-child {
+                                            img {
+                                                max-width: 100%;
+                                                max-width: 100%;
+                                                object-fit: cover;
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                }
+                                /*----REPAIR SERVICES----*/
+                                
+                                .repair {
+                                    background-image: radial-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(img/bg2.jpg);
+                                    background-position: center;
+                                    background-size: cover;
+                                    height: 100%;
+                                    @media(max-width: 767px) {
+                                        height: 130vh;
+                                    }
+                                    margin-top: 40px;
+                                    div {
+                                        @include flex(space-between,
+                                        center,
+                                        row);
+                                        >div:first-child {
+                                            flex: 0 0 48%;
+                                            padding: 50px 50px 50px 0;
+                                            @media(max-width: 768px) {
+                                                flex: 0 0 100%;
+                                                padding: 50px 0;
+                                            }
+                                            article {
+                                                flex: 0 0 48%;
+                                                margin: auto;
+                                                @media(max-width: 768px) {
+                                                    flex: 0 0 100%;
+                                                }
+                                                // padding: 150px 30px 0;
+                                            }
+                                            article:first-child {
+                                                border: 1px solid $white;
+                                                text-align: center;
+                                                flex: 0 0 100%;
+                                                padding: 50px;
+                                                span {
+                                                    font-size: 4rem;
+                                                    color: $secondary;
+                                                }
+                                                h1 {
+                                                    color: $white;
+                                                    font-size: 3rem;
+                                                    font-weight: 300;
+                                                    padding: 20px 0;
+                                                    @media(max-width: 767px) {
+                                                        font-size: 2rem;
+                                                    }
+                                                }
+                                                p {
+                                                    color: $white;
+                                                    font-size: 1rem;
+                                                    font-weight: 100;
+                                                    line-height: 1.3rem;
+                                                    padding: 10px 0;
+                                                }
+                                                button {
+                                                    padding: 13px 25px;
+                                                    margin: 30px 60px;
+                                                    columns: $tertiary;
+                                                    border: 1px solid $white;
+                                                    cursor: pointer;
+                                                    transition: $transition;
+                                                    border-radius: 3px;
+                                                    background: none;
+                                                    color: $white;
+                                                    &:hover {
+                                                        color: $primary;
+                                                        background: $white;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        >div:last-child {
+                                            flex: 1;
+                                            article:last-child {
+                                                @include flex(space-between,
+                                                center,
+                                                column);
+                                                div {
+                                                    flex: 0 0 100%;
+                                                    h1,
+                                                    p {
+                                                        color: $white;
+                                                    }
+                                                    h1 {
+                                                        font-size: 1.7rem;
+                                                        font-weight: 300;
+                                                        padding-bottom: 20px;
+                                                    }
+                                                    p {
+                                                        font-size: 1rem;
+                                                        font-weight: 300;
+                                                        line-height: 1.5rem;
+                                                    }
+                                                    &:nth-child(2) {
+                                                        padding: 50px 0 50px 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                /*----WORK BEST----*/
+                                
+                                .work-best {
+                                     :first-child {
+                                        @include flex(space-between,
+                                        center,
+                                        row);
+                                        @media(max-width: 768px) {
+                                            @include flex(space-between, center, column)
+                                        }
+                                        // margin: 40px auto 40px auto;
+                                        h1 {
+                                            font-size: 2.5rem;
+                                            font-weight: 500;
+                                            @media(max-width: 768px) {
+                                                padding-top: 40px;
+                                            }
+                                        }
+                                        p {
+                                            font-size: 1rem;
+                                            line-height: 1.6rem;
+                                            margin: 60px 0;
+                                            @media(max-width: 768px) {
+                                                margin: 30px 0;
+                                            }
+                                        }
+                                        div:nth-child(1) {
+                                            flex: 0 0 31%;
+                                            @media(max-width: 768px) {
+                                                flex: 0 0 100%;
+                                            }
+                                        }
+                                        div:nth-child(2) {
+                                            flex: 0 0 31%;
+                                        }
+                                        div:nth-child(3) {
+                                            flex: 0 0 31%;
+                                            align-self: flex-start;
+                                        }
+                                    }
+                                    >:last-child {
+                                        @include flex(center,
+                                        center,
+                                        row);
+                                        padding: 0 0 50px;
+                                        background-color: $primary;
+                                         :nth-child(1) {
+                                            padding: 15px 20px;
+                                            color: $primary;
+                                            background: $secondary;
+                                            border-radius: 3px;
+                                            border: 1px solid $secondary;
+                                            text-transform: uppercase;
+                                            font-weight: 900;
+                                            letter-spacing: 1px;
+                                            transition: $transition;
+                                            &:hover {
+                                                border: 1px solid $secondary;
+                                                color: $secondary;
+                                                background: none;
+                                            }
+                                        }
+                                         :nth-child(2) {
+                                            padding: 15px 20px;
+                                            color: $white;
+                                            background: none;
+                                            border-radius: 3px;
+                                            border: 1px solid $white;
+                                            text-transform: uppercase;
+                                            font-weight: 900;
+                                            letter-spacing: 1px;
+                                            margin: 50px 20px;
+                                            transition: $transition;
+                                            &:hover {
+                                                border: 1px solid $white;
+                                                color: $primary;
+                                                background: $white;
+                                            }
+                                        }
+                                         :nth-child(3) {
+                                            padding: 15px 20px;
+                                            color: $white;
+                                            background: $tertiary;
+                                            border-radius: 3px;
+                                            border: 1px solid $tertiary;
+                                            text-transform: uppercase;
+                                            font-weight: 900;
+                                            letter-spacing: 1px;
+                                            transition: $transition;
+                                            &:hover {
+                                                border: 1px solid $tertiary;
+                                                color: $tertiary;
+                                                background: none;
+                                            }
+                                        }
+                                    }
+                                }
+                                /*----CONTACT----*/
+                                
+                                .contact {
+                                    @include flex(space-between,
+                                    start,
+                                    row);
+                                    padding-top: 60px;
+                                    div:nth-child(1) {
+                                        flex: 0 0 24%;
+                                        @media(max-width: 768px) {
+                                            flex: 100%;
+                                        }
+                                        div {
+                                            @include flex(space-between,
+                                            start,
+                                            column);
+                                            form {
+                                                flex: 0 0 100%;
+                                                margin-bottom: 30px;
+                                                width: 100%;
+                                                input {
+                                                    width: 100%;
+                                                    height: 50px;
+                                                }
+                                            }
+                                            textarea {
+                                                flex: 1;
+                                                align-self: stretch;
+                                                margin-bottom: 20px;
+                                                padding: 30% 0;
+                                            }
+                                            button {
+                                                align-self: center;
+                                                padding: 15px 20px;
+                                                color: $primary;
+                                                background: $secondary;
+                                                border-radius: 3px;
+                                                border: 1px solid $secondary;
+                                                text-transform: uppercase;
+                                                font-weight: 900;
+                                                letter-spacing: 1px;
+                                                transition: $transition;
+                                                &:hover {
+                                                    border: 1px solid $secondary;
+                                                    color: $secondary;
+                                                    background: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    div:nth-child(2) {
+                                        flex: 0 0 20%;
+                                        @media(max-width: 768px) {
+                                            flex: 70%;
+                                        }
+                                        h3 {
+                                            font-weight: 500;
+                                            margin: 0 0 20px;
+                                        }
+                                        p {
+                                            font-size: 1rem;
+                                            line-height: 1.5rem;
+                                            margin-bottom: 40px;
+                                        }
+                                    }
+                                    div:nth-child(3) {
+                                        flex: 0 0 18%;
+                                        @media(max-width: 768px) {
+                                            flex: 60%;
+                                        }
+                                        h3 {
+                                            font-weight: 500;
+                                            margin: 0 0 20px;
+                                        }
+                                        p {
+                                            @include flex(flex-start,
+                                            center,
+                                            row);
+                                            margin-bottom: 25px;
+                                            font-size: 1rem;
+                                            font-weight: 300;
+                                            span {
+                                                width: 30px;
+                                                font-size: .6rem;
+                                                color: $darkblue;
+                                            }
+                                        }
+                                    }
+                                    div:nth-child(4) {
+                                        flex: 0 0 24%;
+                                        @media(max-width: 768px) {
+                                            flex: 0 0 90%;
+                                        }
+                                        img {
+                                            width: 40%;
+                                            height: 40%;
+                                            object-fit: cover;
+                                            margin-bottom: 20px;
+                                        }
+                                        p {
+                                            font-size: .7rem;
+                                            margin-bottom: 20px;
+                                        }
+                                        h5 {
+                                            font-size: 1rem;
+                                            font-weight: 300;
+                                            margin-bottom: 20px;
+                                            span {
+                                                margin-right: 20px;
+                                                font-size: 1rem;
+                                                color: $darkblue;
+                                            }
+                                        }
+                                        a {
+                                            text-decoration: none;
+                                            margin-bottom: 20px;
+                                            span {
+                                                margin-right: 20px;
+                                                font-size: 1rem;
+                                                color: $darkblue;
+                                            }
+                                        }
+                                    }
+                                }
+                                /*----FOOTER---*/
+                                
+                                footer {
+                                    height: 15vh;
+                                    background-color: $primary;
+                                    @include flex(center,
+                                    center,
+                                    row);
+                                    @media(max-width: 768px) {
+                                        margin-top: 40px;
+                                    }
+                                    h4 {
+                                        color: $white;
+                                        font-size: 1.3rem;
+                                        font-weight: 300;
+                                    }
+                                }
